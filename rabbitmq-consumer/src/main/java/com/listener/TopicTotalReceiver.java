@@ -7,16 +7,17 @@ import org.springframework.stereotype.Component;
 import java.util.Map;
 
 /**
- * @ClassName: DirectReceiver
+ * @ClassName: TopicTotalReceiver
  * @Description:
  * @Author: xiedong
- * @Date: 2020/7/25 21:13
+ * @Date: 2020/7/25 21:39
  */
 @Component
-@RabbitListener(queues = "TestDirectQueue")//监听的队列名称 TestDirectQueue
-public class DirectReceiver {
+@RabbitListener(queues = "topic.woman")
+public class TopicTotalReceiver {
+
     @RabbitHandler
     public void process(Map testMessage) {
-        System.out.println("第1个--DirectReceiver消费者收到消息  : " + testMessage.toString());
+        System.out.println("TopicTotalReceiver消费者收到消息  : " + testMessage.toString());
     }
 }
