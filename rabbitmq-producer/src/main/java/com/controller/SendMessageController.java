@@ -60,7 +60,7 @@ public class SendMessageController {
         womanMap.put("messageId", messageId);
         womanMap.put("messageData", messageData);
         womanMap.put("createTime", createTime);
-        this.rabbitTemplate.convertAndSend("topicExchange", "topic.woman1", womanMap);
+        this.rabbitTemplate.convertAndSend("topicExchange", "topic.woman", womanMap);
 //        this.rabbitTemplate.convertAndSend("topicExchange", "topic1.woman1", womanMap);
         return "ok";
     }
